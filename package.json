@@ -1,6 +1,6 @@
 {
   "name": "cashport-sdk",
-  "version": "0.0.6-alpha",
+  "version": "0.0.7-alpha",
   "description": "Cashport SDK allows to integrate authorized payment and KYC features in your webapp.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
