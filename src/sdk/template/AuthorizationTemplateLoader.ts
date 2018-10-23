@@ -1,4 +1,3 @@
-//import {ecLevel, modes, qrcode} from '@rjseibane/qrcode/src';
 import qrcode from 'qrcode-generator-es6';
 
 var buttonTemplate = require('./button-cashport-login.html');
@@ -15,15 +14,21 @@ export class AuthorizationTemplateLoader {
         let buttonComponent = AuthorizationTemplateLoader._getButtonComponent();
         let qrContainerComponent = AuthorizationTemplateLoader._getQrContainerComponent();
         buttonComponent.addEventListener('click', (event) => {
-            setTimeout(function () {
+            if (AuthorizationTemplateLoader._enableRedirect()) {
+                setTimeout(function () {
+                    buttonComponent.style.display = 'none';
+                    qrContainerComponent.style.display = 'block';
+                }, 250);
+                document.location.href = uri + '&redirect_back=1';
+            } else {
                 buttonComponent.style.display = 'none';
                 qrContainerComponent.style.display = 'block';
-            }, 350);
-            document.location.href = uri + '&redirect_back=1';
+            }
         });
         containerComponent.appendChild(rootComponent);
         rootComponent.appendChild(buttonComponent);
         rootComponent.appendChild(qrContainerComponent);
+        document.getElementById('open-handcash-link').setAttribute('href', uri);
         let qrComponent = document.getElementById('cashport-qr');
         if (qrComponent.hasChildNodes()) {
             qrComponent.removeChild(qrComponent.firstChild);
@@ -36,6 +41,10 @@ export class AuthorizationTemplateLoader {
                 return '#38CB7C'
             }
         });
+    }
+
+    private static _enableRedirect(): boolean {
+        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
 
     private static _getRootComponent(): HTMLElement {

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//import {ecLevel, modes, qrcode} from '@rjseibane/qrcode/src';
 const qrcode_generator_es6_1 = require("qrcode-generator-es6");
 var buttonTemplate = require('./button-cashport-login.html');
 var qrContainerTemplate = require('./qr-cashport-login.html');
@@ -14,15 +13,22 @@ class AuthorizationTemplateLoader {
         let buttonComponent = AuthorizationTemplateLoader._getButtonComponent();
         let qrContainerComponent = AuthorizationTemplateLoader._getQrContainerComponent();
         buttonComponent.addEventListener('click', (event) => {
-            setTimeout(function () {
+            if (AuthorizationTemplateLoader._enableRedirect()) {
+                setTimeout(function () {
+                    buttonComponent.style.display = 'none';
+                    qrContainerComponent.style.display = 'block';
+                }, 250);
+                document.location.href = uri + '&redirect_back=1';
+            }
+            else {
                 buttonComponent.style.display = 'none';
                 qrContainerComponent.style.display = 'block';
-            }, 350);
-            document.location.href = uri + '&redirect_back=1';
+            }
         });
         containerComponent.appendChild(rootComponent);
         rootComponent.appendChild(buttonComponent);
         rootComponent.appendChild(qrContainerComponent);
+        document.getElementById('open-handcash-link').setAttribute('href', uri);
         let qrComponent = document.getElementById('cashport-qr');
         if (qrComponent.hasChildNodes()) {
             qrComponent.removeChild(qrComponent.firstChild);
@@ -35,6 +41,9 @@ class AuthorizationTemplateLoader {
                 return '#38CB7C';
             }
         });
+    }
+    static _enableRedirect() {
+        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
     static _getRootComponent() {
         let rootComponent = document.getElementById('cashport-root');
