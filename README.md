@@ -28,10 +28,26 @@ First of all, you have to include an html element where Cashport will build the 
 <div id="cashport-container"></div>
 ```
 
+Some basic imports and initializations: 
+
+```typescript
+import {
+    AuthorizationRequest,
+    Cashport,
+    GrantedAuthorization,
+    PaymentRequestFactory,
+    PersonalInfoPermission,
+    SignTransactionRequestBuilder
+} from 'cashport-sdk'
+
+const appId = 'your-app-id;
+let cashport: Cashport = new Cashport();
+```
+
 Then you can enable the Cashport login:
 
 ```typescript
-
+let cashport = new Cashport()
 let permissions = [PersonalInfoPermission.HANDLE, PersonalInfoPermission.FIRST_NAME, PersonalInfoPermission.LAST_NAME, PersonalInfoPermission.EMAIL];
 let authRequest = new AuthorizationRequest(permissions, appId);
 cashport.loadAuthorizationRequest('cashport-container', authRequest, {

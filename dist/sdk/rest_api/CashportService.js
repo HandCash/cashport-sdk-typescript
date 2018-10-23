@@ -26,6 +26,6 @@ class CashportService {
         });
     }
 }
-CashportService.BASE_ENDPOINT = "https://hand-cash-dev.herokuapp.com/api/cashport/";
+CashportService.BASE_ENDPOINT = "https://api.handcash.io/api/cashport/";
 exports.CashportService = CashportService;
 //# sourceMappingURL=CashportService.js.map

@@ -4,7 +4,7 @@ import {SignTransactionRequest} from "../entity/SignTransactionRequest";
 
 export class CashportService {
 
-    static BASE_ENDPOINT: string = "https://hand-cash-dev.herokuapp.com/api/cashport/";
+    static BASE_ENDPOINT: string = "https://api.handcash.io/api/cashport/";
 
     private _axios: AxiosInstance;
 
