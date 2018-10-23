@@ -1,0 +1,40 @@
+{
+  "name": "cashport-sdk",
+  "version": "0.0.6-alpha",
+  "description": "Cashport SDK allows to integrate authorized payment and KYC features in your webapp.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "npm run build --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HandCash/cashport-sdk-typescript.git"
+  },
+  "keywords": [
+    "cashport",
+    "handcash",
+    "ts",
+    "bch",
+    "new-money"
+  ],
+  "author": "rjseibane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HandCash/cashport-sdk-typescript/issues"
+  },
+  "homepage": "https://github.com/HandCash/cashport-sdk-typescript#readme",
+  "devDependencies": {
+    "@types/node": "^10.11.7",
+    "@types/pubnub": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "pubnub": "^4.21.5",
+    "qrcode-generator-es6": "^1.1.4"
+  }
+}

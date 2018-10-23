@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+
+#cashport-root {
+    font-family: Cabin, Helvetica Neue, HelveticaNeue, HelveticaNeue-Light, Helvetica Neue Light, helvetica, arial, sans-serif;
+    padding: 16px;
+}
+
+#btn-cashport-login {
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    padding: 16px 32px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #38CB7C;
+    border: 5px #38CB7C;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#btn-cashport-login:hover {
+    color: #FCFCFC;
+    background-color: #28A366;
+}
+
+#btn-cashport-login img {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#btn-cashport-login span {
+    margin-left: 41px;
+}
+
+#cashport-login-container {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+#cashport-login-container h2 {
+    letter-spacing: 1px;
+    color: #222222;
+}
+
+#cashport-qr svg {
+    width: 100%;
+    min-width: 200px;
+    max-width: 400px;
+    height: auto;
+}
