@@ -44,7 +44,10 @@ export class AuthorizationTemplateLoader {
     }
 
     private static _enableRedirect(): boolean {
-        return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('safari') != -1) {
+            return ua.indexOf('chrome') > -1;
+        }
     }
 
     private static _getRootComponent(): HTMLElement {
