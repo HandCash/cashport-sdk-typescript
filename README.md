@@ -38,16 +38,16 @@ import {
     PaymentRequestFactory,
     PersonalInfoPermission,
     SignTransactionRequestBuilder
-} from 'cashport-sdk'
+} from 'cashport-sdk';
 
-const appId = 'your-app-id;
+const appId = 'your-app-id';
 let cashport: Cashport = new Cashport();
 ```
 
 Then you can enable the Cashport login:
 
 ```typescript
-let cashport = new Cashport()
+let cashport = new Cashport();
 let permissions = [PersonalInfoPermission.HANDLE, PersonalInfoPermission.FIRST_NAME, PersonalInfoPermission.LAST_NAME, PersonalInfoPermission.EMAIL];
 let authRequest = new AuthorizationRequest(permissions, appId);
 cashport.loadAuthorizationRequest('cashport-container', authRequest, {
