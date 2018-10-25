@@ -131,7 +131,7 @@ function sendPayToHandlePaymentRequest(handle: string): void {
 
 # Demo
 
-Try the demo at [try.cashport.io](try.cashport.io)
+Try the demo at [try.cashport.io](https://try.cashport.io)
 
 # Next
 - Build your first app and start to disrupt your industry! 

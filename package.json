@@ -1,6 +1,6 @@
 {
   "name": "cashport-sdk",
-  "version": "0.0.9-alpha",
+  "version": "0.0.14-alpha",
   "description": "Cashport SDK allows to integrate authorized payment and KYC features in your webapp.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/HandCash/cashport-sdk-typescript#readme",
   "devDependencies": {
+    "@types/chrome": "0.0.74",
     "@types/node": "^10.11.7",
     "@types/pubnub": "^4.0.2",
     "awesome-typescript-loader": "^5.2.1",

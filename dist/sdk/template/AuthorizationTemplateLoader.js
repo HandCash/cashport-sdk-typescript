@@ -43,10 +43,8 @@ class AuthorizationTemplateLoader {
         });
     }
     static _enableRedirect() {
-        var ua = navigator.userAgent.toLowerCase();
-        if (ua.indexOf('safari') != -1) {
-            return ua.indexOf('chrome') > -1;
-        }
+        var isChrome = !!window.chrome;
+        return isChrome;
     }
     static _getRootComponent() {
         let rootComponent = document.getElementById('cashport-root');
