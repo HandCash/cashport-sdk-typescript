@@ -12,7 +12,7 @@ This section contains all the steps required to integrate *Cashport* in your app
 
 ## 1. Get the API Credentials.
 
-Go to https://cashport.io/developers and apply for the *API Credentials*. 
+Go to [https://cashport.io/developers](https://cashport.io/developers.html) and apply for the *API Credentials*. 
 
 In the meanwhile you can use this `API_ID` to start developing.
  
